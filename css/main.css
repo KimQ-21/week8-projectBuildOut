@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: "Karla", monospace;
+  color: black;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+  display: grid;
+  place-content: center;
+}
+
+.container {
+  width: 90vw;
+  max-width: 500px;
+  background-color: rgb(195, 233, 214);
+  display: grid;
+  gap: 1px;
+  grid-template-areas:
+    "header header header header"
+    "display display display display";
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: 20px minmax(120px, auto) repeat(5, minmax(0, 70px));
+}
+
+.container1 {
+  width: 90vw;
+  max-width: 500px;
+  background-color: rgb(125, 181, 247);
+  display: grid;
+  gap: 1px;
+  grid-template-areas:
+    "header header header header"
+    "display display display display";
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: 20px minmax(120px, auto) repeat(5, minmax(0, 70px));
+}
+
+.container:focus-within {
+  background-color: rgba(225, 225, 225, 0.5);
+}
+
+.header {
+  grid-area: header;
+  padding: 0.25rem 0.5 rem;
+  display: flex;
+  align-items: center;
+}
+
+.header > h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 0.85rem;
+  font-weight: normal;
+}
+
+.display {
+  grid-area: display;
+  padding: 3px 5px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.previousvalue {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.currentvalue {
+  font-size: 3rem;
+  font-weight: bolder;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  text-align: right;
+  font-family: "Karla", monospace;
+}
+
+button {
+  display: grid;
+  place-content: center;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  background-color: whitesmoke;
+  border: none;
+  outline: none;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
+
+.btn-group button {
+  background-color: lightgrey;
+  float: left;
+  cursor: pointer;
+  border: solid black;
+}
+
+button:hover,
+button:active {
+  background-color: rgba(225, 225, 225, 0.2);
+}
+
+.function {
+  background-color: rgb(235, 235, 235);
+}
+
+.equals {
+  background-color: rgb(221, 188, 127);
+}
+
+.equals:hover,
+.equals:active {
+  background-color: rgb(223, 168, 68);
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 22px;
+  }
+  .container {
+    grid-template-rows: 35px minmax(95px, auto) repeat(5, minmax (0, 95px));
+  }
+}
